@@ -1,0 +1,386 @@
+﻿<process name="Notepad" version="1.0" bpversion="7.1.2.3518" narrative="An example business object" byrefcollection="true" type="object" runmode="Exclusive" preferredid="6fab23e6-a68f-40f3-af46-c57206b72daa">
+  <appdef>
+    <element name="Wordpad">
+      <id>7e2ace7c-ff1e-416d-911a-e92b504ad4d0</id>
+      <type>Application</type>
+      <basetype>Application</basetype>
+      <datatype>unknown</datatype>
+      <diagnose>False</diagnose>
+    </element>
+    <apptypeinfo>
+      <id>Win32Launch</id>
+      <parameters>
+        <parameter>
+          <name>Path</name>
+          <value>C:\Program Files (x86)\Windows NT\Accessories\wordpad.exe</value>
+        </parameter>
+        <parameter>
+          <name>CommandLineParams</name>
+          <value>
+          </value>
+        </parameter>
+        <parameter>
+          <name>WorkingDirectory</name>
+          <value>
+          </value>
+        </parameter>
+        <parameter>
+          <name>NonInvasive</name>
+          <value>True</value>
+        </parameter>
+        <parameter>
+          <name>ProcessMode</name>
+          <value>Internal</value>
+        </parameter>
+        <parameter>
+          <name>ExternalProcessTimeout</name>
+          <value>60</value>
+        </parameter>
+        <parameter>
+          <name>Options</name>
+          <value>
+          </value>
+        </parameter>
+      </parameters>
+    </apptypeinfo>
+  </appdef>
+  <view>
+    <camerax>0</camerax>
+    <cameray>0</cameray>
+    <zoom version="2">1.25</zoom>
+  </view>
+  <preconditions />
+  <endpoint narrative="" />
+  <subsheet subsheetid="f886575e-c6c3-4e63-b3f8-2706c77ffc98" type="CleanUp" published="True">
+    <name>Clean Up</name>
+    <view>
+      <camerax>0</camerax>
+      <cameray>0</cameray>
+      <zoom version="2">1.25</zoom>
+    </view>
+  </subsheet>
+  <subsheet subsheetid="c339d94d-28d9-4f34-885f-c5bb9953b731" type="Normal" published="True">
+    <name>Notepad</name>
+    <view>
+      <camerax>0</camerax>
+      <cameray>0</cameray>
+      <zoom version="2">1.25</zoom>
+    </view>
+  </subsheet>
+  <subsheet subsheetid="17e46d3b-e71b-4e2d-b4ce-28e70e532d80" type="Normal" published="True">
+    <name>Close</name>
+    <view>
+      <camerax>0</camerax>
+      <cameray>0</cameray>
+      <zoom version="2">1.25</zoom>
+    </view>
+  </subsheet>
+  <stage stageid="9a5a15f5-0285-40d4-a632-e4191de3c4af" name="Start" type="Start">
+    <loginhibit />
+    <display x="15" y="-105" />
+    <font family="Tahoma" size="10" style="Regular" color="000000" />
+    <onsuccess>b41147df-f089-42d7-8219-bc81dca2c39a</onsuccess>
+  </stage>
+  <stage stageid="b41147df-f089-42d7-8219-bc81dca2c39a" name="End" type="End">
+    <loginhibit />
+    <display x="15" y="90" />
+    <font family="Tahoma" size="10" style="Regular" color="000000" />
+  </stage>
+  <stage stageid="e582e2bf-6b67-4484-82fd-6d8af96fb035" name="Stage1" type="ProcessInfo">
+    <display x="-195" y="-105" w="150" h="90" />
+    <font family="Tahoma" size="10" style="Regular" color="000000" />
+    <references>
+      <reference>System.Data.dll</reference>
+      <reference>System.Xml.dll</reference>
+      <reference>System.Drawing.dll</reference>
+    </references>
+    <imports>
+      <import>System</import>
+      <import>System.Drawing</import>
+    </imports>
+    <language>visualbasic</language>
+    <globalcode><![CDATA[
+
+]]></globalcode>
+    <code><![CDATA[
+
+]]></code>
+  </stage>
+  <stage stageid="7f950360-6bd4-4b4d-897e-aadc46b1b8ff" name="Clean Up" type="SubSheetInfo">
+    <subsheetid>f886575e-c6c3-4e63-b3f8-2706c77ffc98</subsheetid>
+    <display x="-195" y="-105" w="150" h="90" />
+    <font family="Tahoma" size="10" style="Regular" color="000000" />
+  </stage>
+  <stage stageid="e50de2b0-6b82-4b42-9d16-37598d21de27" name="Start" type="Start">
+    <subsheetid>f886575e-c6c3-4e63-b3f8-2706c77ffc98</subsheetid>
+    <loginhibit />
+    <display x="15" y="-105" />
+    <font family="Tahoma" size="10" style="Regular" color="000000" />
+    <onsuccess>c3856713-46c5-4062-8112-d853f9dbebc6</onsuccess>
+  </stage>
+  <stage stageid="c3856713-46c5-4062-8112-d853f9dbebc6" name="End" type="End">
+    <subsheetid>f886575e-c6c3-4e63-b3f8-2706c77ffc98</subsheetid>
+    <loginhibit />
+    <display x="15" y="90" />
+    <font family="Tahoma" size="10" style="Regular" color="000000" />
+  </stage>
+  <stage stageid="b2e6050f-0f16-4bc1-b8e9-9488be4ddd8b" name="new" type="Note">
+    <subsheetid>f886575e-c6c3-4e63-b3f8-2706c77ffc98</subsheetid>
+    <narrative>Clean Up Page
+
+This is an optional page where you might choose to perform some finalisation (or "cleanup") tasks as your business object is closed down.
+
+The cleanup action will be called automatically immediately after closing your business object at the end of a business process.
+
+You will not be able to call this action from a business process, nor will it be called at any other time than before the disposal of the business object.</narrative>
+    <display x="-180" y="60" w="180" h="230" />
+    <font family="Tahoma" size="10" style="Regular" color="000000" />
+  </stage>
+  <stage stageid="d79c350b-64eb-4ad0-8206-eb8ed9895887" name="new" type="Note">
+    <narrative>Initialise Page
+
+This is an optional page where you might choose to perform some initialisation tasks after your business object is loaded.
+
+The initialise action will be called automatically immediately after loading your business object.
+
+You will not be able to call this action from a business process, nor will it be called at any other time than after the creation of the object.</narrative>
+    <display x="-180" y="60" w="180" h="230" />
+    <font family="Tahoma" size="10" style="Regular" color="000000" />
+  </stage>
+  <stage stageid="b5361e18-471d-4b9b-ad5d-71716eef9bff" name="Notepad" type="SubSheetInfo">
+    <subsheetid>c339d94d-28d9-4f34-885f-c5bb9953b731</subsheetid>
+    <display x="-195" y="-105" w="150" h="90" />
+    <font family="Tahoma" size="10" style="Regular" color="000000" />
+  </stage>
+  <stage stageid="9d267d8e-534a-4cd6-8018-f33f918c70ac" name="Start" type="Start">
+    <subsheetid>c339d94d-28d9-4f34-885f-c5bb9953b731</subsheetid>
+    <loginhibit />
+    <display x="15" y="-285" />
+    <font family="Tahoma" size="10" style="Regular" color="000000" />
+    <inputs>
+      <input type="text" name="Note Text" narrative="The text to write" stage="Note" />
+    </inputs>
+    <onsuccess>07e41dab-7445-47b2-8c3c-993f51428c37</onsuccess>
+  </stage>
+  <stage stageid="e8610088-613b-42fe-ab9c-ca37f2bdda34" name="End" type="End">
+    <subsheetid>c339d94d-28d9-4f34-885f-c5bb9953b731</subsheetid>
+    <loginhibit />
+    <display x="15" y="255" />
+    <font family="Tahoma" size="10" style="Regular" color="000000" />
+  </stage>
+  <stage stageid="07e41dab-7445-47b2-8c3c-993f51428c37" name="Launch" type="Navigate">
+    <subsheetid>c339d94d-28d9-4f34-885f-c5bb9953b731</subsheetid>
+    <loginhibit />
+    <display x="15" y="-225" />
+    <onsuccess>7cbd60a5-1941-4f23-aa72-59192f93f791</onsuccess>
+    <step>
+      <element id="7e2ace7c-ff1e-416d-911a-e92b504ad4d0" />
+      <action>
+        <id>Launch</id>
+        <arguments>
+          <argument>
+            <id>CommandLineParams</id>
+            <value>
+            </value>
+          </argument>
+          <argument>
+            <id>Path</id>
+            <value>
+            </value>
+          </argument>
+          <argument>
+            <id>WorkingDirectory</id>
+            <value>
+            </value>
+          </argument>
+          <argument>
+            <id>NonInvasive</id>
+            <value>
+            </value>
+          </argument>
+          <argument>
+            <id>ProcessMode</id>
+            <value>
+            </value>
+          </argument>
+          <argument>
+            <id>Options</id>
+            <value>
+            </value>
+          </argument>
+        </arguments>
+      </action>
+    </step>
+  </stage>
+  <stage stageid="13c4e4a2-fb75-4ffb-a2c5-71eabc2defac" name="Write text" type="Navigate">
+    <subsheetid>c339d94d-28d9-4f34-885f-c5bb9953b731</subsheetid>
+    <loginhibit />
+    <display x="15" y="30" />
+    <onsuccess>47862fe3-0392-40e2-ab1f-baaa5e463ca9</onsuccess>
+    <step>
+      <element id="7e2ace7c-ff1e-416d-911a-e92b504ad4d0" />
+      <action>
+        <id>SendKeys</id>
+        <arguments>
+          <argument>
+            <id>newtext</id>
+            <value>"Hello there"</value>
+          </argument>
+          <argument>
+            <id>interval</id>
+            <value>
+            </value>
+          </argument>
+        </arguments>
+      </action>
+    </step>
+    <step>
+      <element id="7e2ace7c-ff1e-416d-911a-e92b504ad4d0" />
+      <action>
+        <id>SendKeys</id>
+        <arguments>
+          <argument>
+            <id>newtext</id>
+            <value>"{ENTER}"</value>
+          </argument>
+          <argument>
+            <id>interval</id>
+            <value>
+            </value>
+          </argument>
+        </arguments>
+      </action>
+    </step>
+    <step>
+      <element id="7e2ace7c-ff1e-416d-911a-e92b504ad4d0" />
+      <action>
+        <id>SendKeys</id>
+        <arguments>
+          <argument>
+            <id>newtext</id>
+            <value>"write more text in second line"</value>
+          </argument>
+          <argument>
+            <id>interval</id>
+            <value>
+            </value>
+          </argument>
+        </arguments>
+      </action>
+    </step>
+  </stage>
+  <stage stageid="47862fe3-0392-40e2-ab1f-baaa5e463ca9" name="Save" type="Navigate">
+    <subsheetid>c339d94d-28d9-4f34-885f-c5bb9953b731</subsheetid>
+    <loginhibit />
+    <display x="15" y="90" />
+    <onsuccess>5b8e228c-768c-45d8-ad0d-44bc03c93e62</onsuccess>
+    <step>
+      <element id="7e2ace7c-ff1e-416d-911a-e92b504ad4d0" />
+      <action>
+        <id>SendKeys</id>
+        <arguments>
+          <argument>
+            <id>newtext</id>
+            <value>"^s"</value>
+          </argument>
+          <argument>
+            <id>interval</id>
+            <value>
+            </value>
+          </argument>
+        </arguments>
+      </action>
+    </step>
+  </stage>
+  <stage stageid="5b8e228c-768c-45d8-ad0d-44bc03c93e62" name="Provide Path and Enter" type="Navigate">
+    <subsheetid>c339d94d-28d9-4f34-885f-c5bb9953b731</subsheetid>
+    <loginhibit />
+    <display x="15" y="150" />
+    <onsuccess>e8610088-613b-42fe-ab9c-ca37f2bdda34</onsuccess>
+    <step>
+      <element id="7e2ace7c-ff1e-416d-911a-e92b504ad4d0" />
+      <action>
+        <id>SendKeys</id>
+        <arguments>
+          <argument>
+            <id>newtext</id>
+            <value>"D:\mylearning\SAMPLE_PROJECTS\blueprism_samples\2_notepad_app\sample.rtf"</value>
+          </argument>
+          <argument>
+            <id>interval</id>
+            <value>
+            </value>
+          </argument>
+        </arguments>
+      </action>
+    </step>
+    <step>
+      <element id="7e2ace7c-ff1e-416d-911a-e92b504ad4d0" />
+      <action>
+        <id>SendKeys</id>
+        <arguments>
+          <argument>
+            <id>newtext</id>
+            <value>"{ENTER}"</value>
+          </argument>
+          <argument>
+            <id>interval</id>
+            <value>
+            </value>
+          </argument>
+        </arguments>
+      </action>
+    </step>
+  </stage>
+  <stage stageid="7bb44740-6776-4983-95f0-f1799381290e" name="Time Out1" type="WaitEnd">
+    <subsheetid>c339d94d-28d9-4f34-885f-c5bb9953b731</subsheetid>
+    <loginhibit />
+    <display x="165" y="-135" w="30" h="30" />
+    <onsuccess>13c4e4a2-fb75-4ffb-a2c5-71eabc2defac</onsuccess>
+    <groupid>98398d8c-e38c-4d87-866e-ef2ebe30526a</groupid>
+  </stage>
+  <stage stageid="7cbd60a5-1941-4f23-aa72-59192f93f791" name="Wait1" type="WaitStart">
+    <subsheetid>c339d94d-28d9-4f34-885f-c5bb9953b731</subsheetid>
+    <loginhibit />
+    <display x="15" y="-135" w="30" h="30" />
+    <groupid>98398d8c-e38c-4d87-866e-ef2ebe30526a</groupid>
+    <choices />
+    <timeout>10</timeout>
+  </stage>
+  <stage stageid="7e349772-a10e-4043-86c1-623bb2c6389e" name="Close" type="SubSheetInfo">
+    <subsheetid>17e46d3b-e71b-4e2d-b4ce-28e70e532d80</subsheetid>
+    <display x="-195" y="-105" w="150" h="90" />
+  </stage>
+  <stage stageid="7562e572-bf73-437c-bec2-5fb2c56e88ce" name="Start" type="Start">
+    <subsheetid>17e46d3b-e71b-4e2d-b4ce-28e70e532d80</subsheetid>
+    <loginhibit />
+    <display x="15" y="-105" />
+    <onsuccess>dea52d6d-b2f4-46e8-bc1d-aee6c13d6491</onsuccess>
+  </stage>
+  <stage stageid="bd302971-4767-49e3-ade8-592ab0eee047" name="End" type="End">
+    <subsheetid>17e46d3b-e71b-4e2d-b4ce-28e70e532d80</subsheetid>
+    <loginhibit />
+    <display x="15" y="90" />
+  </stage>
+  <stage stageid="dea52d6d-b2f4-46e8-bc1d-aee6c13d6491" name="Close" type="Navigate">
+    <subsheetid>17e46d3b-e71b-4e2d-b4ce-28e70e532d80</subsheetid>
+    <loginhibit />
+    <display x="15" y="-15" />
+    <onsuccess>bd302971-4767-49e3-ade8-592ab0eee047</onsuccess>
+    <step>
+      <element id="7e2ace7c-ff1e-416d-911a-e92b504ad4d0" />
+      <action>
+        <id>Terminate</id>
+      </action>
+    </step>
+  </stage>
+  <stage stageid="331120d9-babc-4829-9295-e45ca9e17646" name="Note" type="Data">
+    <subsheetid>c339d94d-28d9-4f34-885f-c5bb9953b731</subsheetid>
+    <loginhibit />
+    <display x="345" y="-240" />
+    <datatype>text</datatype>
+    <initialvalue />
+    <private />
+    <alwaysinit />
+  </stage>
+</process>
